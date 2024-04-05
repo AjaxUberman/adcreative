@@ -169,8 +169,11 @@ function App() {
         </div>
         {filtered &&
           filtered.length > 0 &&
-          filtered.map((i) => (
-            <div className="flex px-4 py-4 w-72 left-0 relative items-center gap-3 ring-1 ring-hover-yesil bg-fistik-yesil bg-opacity-40">
+          filtered.map((i, index) => (
+            <div
+              key={index}
+              className="flex px-4 py-4 w-72 left-0 relative items-center gap-3 ring-1 ring-hover-yesil bg-fistik-yesil bg-opacity-40"
+            >
               <button
                 className="ring ring-hover-yesil rounded-md w-4 h-4"
                 onClick={() => {
