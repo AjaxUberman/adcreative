@@ -191,7 +191,7 @@ function App() {
                 className="w-10 h-10 object-cover rounded-xl"
               />
               <div className="flex flex-col">
-                <div
+                <div 
                   className={` text-sm font-semibold whitespace-nowrap capitalize`}
                   key={i.id}
                 >
