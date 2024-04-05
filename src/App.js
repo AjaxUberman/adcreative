@@ -135,7 +135,7 @@ function App() {
             placeholder={selected.length !== 0 ? "" : "Karakterinizi Giriniz!"}
             value={inputValue}
             onChange={inputHandler}
-            className={` outline-none z-4 bg-transparent ${
+            className={` outline-none z-4 bg-transparent w-full ${
               selected.length !== 0 ? "w-20" : ""
             } `}
           />
