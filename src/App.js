@@ -1,5 +1,5 @@
 import "./App.css";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { FaCaretDown } from "react-icons/fa";
 import { FaCheck } from "react-icons/fa6";
 import { FaXmark } from "react-icons/fa6";
@@ -11,6 +11,7 @@ function App() {
   const [enable, setEnable] = useState(false);
   const [filtered, setFiltered] = useState(datas);
   const [inputValue, setInputValue] = useState("");
+  const menuRef = useRef(null);
 
   /* API */
   useEffect(() => {
@@ -65,6 +66,13 @@ function App() {
     }
     setEnable(true);
   };
+
+  /* Scroll Reset */
+  useEffect(() => {
+    if (!inputValue && menuRef.current) {
+      menuRef.current.scrollTo(0, 0);
+    }
+  }, [inputValue]);
 
   /* DeleteItem */
   const deleteHandler = (id) => {
@@ -152,6 +160,7 @@ function App() {
 
       {/* MENU */}
       <div
+        ref={menuRef}
         className={`${
           !enable
             ? "opacity-0 -translate-y-32 w-0 h-0"
@@ -191,7 +200,7 @@ function App() {
                 className="w-10 h-10 object-cover rounded-xl"
               />
               <div className="flex flex-col">
-                <div 
+                <div
                   className={` text-sm font-semibold whitespace-nowrap capitalize`}
                   key={i.id}
                 >
