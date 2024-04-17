@@ -69,10 +69,12 @@ function App() {
 
   /* Scroll Reset */
   useEffect(() => {
-    if (!inputValue && menuRef.current) {
+    if (inputValue.length <= 1 && menuRef.current) {
       menuRef.current.scrollTo(0, 0);
     }
   }, [inputValue]);
+
+  console.log(inputValue.length);
 
   /* DeleteItem */
   const deleteHandler = (id) => {
