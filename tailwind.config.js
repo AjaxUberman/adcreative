@@ -11,7 +11,7 @@ module.exports = {
         "fistik-yesil": "#E2F4C5",
       },
       boxShadow: {
-        ince: " rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;",
+        ince: "1.95px 1.95px 2.6px  rgba(0, 0, 0, 0.15) ",
       },
     },
   },
